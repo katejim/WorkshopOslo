@@ -14,25 +14,13 @@ import service.flattylang.exprevaluator.ExprEvaluator
 object AllSimplifications {
 
   // TODO: Create seq of simplifications
-  val simplifications: Seq[AbstractSimplification] = Seq(new AlwaysTrueOrFalse)
+  val simplifications: Seq[AbstractSimplification] = ???
 
   def applyAll(node: AbstractNode): AbstractNode =
     simplifications.foldLeft(node)((value: AbstractNode, simplification) => simplification.transform(value))
 
   // TODO: Implement update children function
-  def updateChildren(node: AbstractNode): AbstractNode = {
-    def updateBlockChildren(block: Block): Block =
-      Block(block.block.map(applyRecursively).filter(_ != EmptyNode).flatMap { case b: Block => b.block case n => Seq(n) })
-
-    node match {
-      case Assignement(name, value) => Assignement(name, applyRecursively(value))
-      case b: Block => updateBlockChildren(b)
-      case If(condition, ifBody, elseBody) => If(applyRecursively(condition), updateBlockChildren(ifBody), updateBlockChildren(elseBody))
-      case While(condition, wBody) => While(applyRecursively(condition), applyRecursively(wBody))
-      case BinaryExpression(left, right, operation) => BinaryExpression(applyRecursively(left), applyRecursively(right), operation)
-      case _ => node
-    }
-  }
+  def updateChildren(node: AbstractNode): AbstractNode = ???
 
   def applyRecursively(node: AbstractNode): AbstractNode = applyAll(updateChildren(node))
 

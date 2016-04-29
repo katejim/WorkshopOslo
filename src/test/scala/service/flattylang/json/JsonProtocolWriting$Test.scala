@@ -50,11 +50,11 @@ class JsonProtocolWriting$Test extends FunSuite {
     assert(blockAst.toJson.toString == blockJson)
   }
 
-  test("testEmptyNode") {
-    val emptyNodeAst = EmptyNode()
-    val emptyNodeJson = "{}"
-    assert(emptyNodeAst.toJson.toString == emptyNodeJson)
-  }
+//  test("testEmptyNode") {
+//    val emptyNodeAst = EmptyNode()
+//    val emptyNodeJson = "{}"
+//    assert(emptyNodeAst.toJson.toString == emptyNodeJson)
+//  }
 
 
   private def intAst: IntValue = IntValue(23)

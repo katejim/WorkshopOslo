@@ -14,7 +14,7 @@ import spray.httpx.SprayJsonSupport.sprayJsonUnmarshaller
 import spray.routing._
 
 
-trait FlattyApi extends HttpService with FlattyService {
+trait FlattyApi extends HttpService {
 
   def successfulPost(before: String, after: String) = respondWithMediaType(MediaTypes.`text/html`) {
     complete(Renderer.wrapInHtmlIndex(before, after))
@@ -25,11 +25,13 @@ trait FlattyApi extends HttpService with FlattyService {
       post {
         entity(as[AbstractNode]) { ast =>
           // TODO: render input ast and updated ast
-          successfulPost(Renderer.render(ast), Renderer.render(simplifyAst(ast)))
+          complete(StatusCodes.MethodNotAllowed)
         }
       }
     }
   }
+
+
 }
 
 class FlattyApiServiceActor extends Actor with FlattyApi {
