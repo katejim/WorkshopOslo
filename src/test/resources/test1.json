@@ -1,0 +1,47 @@
+{
+  "if": {
+    "condition": {
+      "binary": {
+        "left": {
+          "int": {
+            "value": 23
+          }
+        },
+        "right": {
+          "int": {
+            "value": 23
+          }
+        },
+        "operation": "=="
+      }
+    },
+    "ifBody": {
+      "block": [
+        {
+          "int": {
+            "value": 23
+          }
+        },
+        {
+          "boolean": {
+            "value": true
+          }
+        },
+        {
+          "string": {
+            "value": "kate"
+          }
+        }
+      ]
+    },
+    "elseBody": {
+      "block": [
+        {
+          "int": {
+            "value": 22
+          }
+        }
+      ]
+    }
+  }
+}

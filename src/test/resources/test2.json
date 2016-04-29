@@ -1,0 +1,42 @@
+{
+  "while": {
+    "condition": {
+      "boolean": {
+        "value": true
+      }
+    },
+    "wBody": {
+      "block": {
+        "block": [
+          {
+            "if": {
+              "condition": {
+                "boolean": {
+                  "value": false
+                }
+              },
+              "ifBody": {
+                "block": [
+                  {
+                    "int": {
+                      "value": 12
+                    }
+                  }
+                ]
+              },
+              "elseBody": {
+                "block": [
+                  {
+                    "int": {
+                      "value": 23
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
