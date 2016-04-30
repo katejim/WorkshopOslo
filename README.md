@@ -11,6 +11,6 @@ git clone https://github.com/katejim/WorkshopOslo.git
 3. Import to Intellij IDEA `File -> New -> Project from existing sources`, point to
 the directory where project is and then import it as SBT project
 
-We are going to use Intellij IDEA 16.1 with Scala Plugin v3.0.2 on the presentation
+We are going to use Intellij IDEA 16.1 with Scala Plugin v3.0.3 on the presentation
 
 any questions? feel free to ask kate.ustyuzhanina@jetbrains.com
